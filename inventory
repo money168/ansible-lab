@@ -1,0 +1,63 @@
+
+AP02  ansible_ssh_host=192.168.115.2
+AP03  ansible_ssh_host=192.168.203.213
+AP04  ansible_ssh_host=192.168.203.241
+AP05  ansible_ssh_host=192.168.115.5
+
+AP06  ansible_ssh_host=192.168.115.6
+AP07  ansible_ssh_host=192.168.115.7
+AP08  ansible_ssh_host=192.168.115.8
+AP09  ansible_ssh_host=192.168.115.9
+
+AP10  ansible_ssh_host=192.168.115.10
+AP11  ansible_ssh_host=192.168.115.11
+AP12  ansible_ssh_host=192.168.115.12
+
+
+AP22  ansible_ssh_host=192.168.115.102
+AP23  ansible_ssh_host=192.168.115.103
+AP24  ansible_ssh_host=192.168.115.104
+AP25  ansible_ssh_host=192.168.115.105
+
+AP26  ansible_ssh_host=192.168.115.106
+AP27  ansible_ssh_host=192.168.115.107
+AP28  ansible_ssh_host=192.168.115.108
+AP29  ansible_ssh_host=192.168.115.109
+
+AP30  ansible_ssh_host=192.168.115.110
+AP31  ansible_ssh_host=192.168.115.111
+AP32  ansible_ssh_host=192.168.115.112
+
+
+[SKC51]
+##AP03 ansible_ssh_host=192.168.203.213
+AP03
+##AP05
+
+[SKC52]
+##AP03 ansible_ssh_host=192.168.203.213
+AP04
+##AP05
+
+[TNE11]
+AP03
+
+[TNE12]
+AP03
+
+[AP:children]
+SKC51
+SKC52
+TNE11
+TNE12
+
+[AP:vars]
+
+#ansible_password=1qaz2wsx#EDC
+ansible_ssh_user=jerrywu
+#ansible_sudo_pass=abcd1234
+#ansible_become
+ansible_become_user=root
+ansible_become_method=su
+ansible_become_pass=abcd1234
+#host_key_checking=False
