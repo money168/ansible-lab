@@ -1,0 +1,37 @@
+---
+  - name: copy /etc/hosts to managed hosts
+    hosts: "{{ ap }}"
+    tasks:
+#    - name: copy /etc/logroate.d/1
+#      become: true
+#      become_user: root
+#      copy:
+#        src: /data/chrony
+#        dest: /etc/logrotate.d/
+
+    - name: This command will change the working directory to somedir/
+#      become: true
+#      ansible.builtin.shell:
+      shell:
+#        cmd: ls -ltrh /etc/logrotate.d/
+        cmd: ls -ltrh /tmp/httpd-check/log/
+#        chdir: /etc/logrotate.d/
+      register: datecmd
+      tags: datecmd
+
+    - debug: msg="{{datecmd.stdout}}"
+
+    - name: Dir list and write to file
+      shell:
+#         " ls -lrt /apps|awk '{print $9}'|sed '/^$/d' > /tmp/dirlist.txt "
+#         " ls -lrt /etc/logrotate.d/ > /tmp/dirlist.txt "
+         " grep -v 200 /tmp/httpd-check/log/* > /tmp/list.txt "
+#         " zgrep -v 200 /tmp/httpd-check/log/* > /tmp/list.txt "
+      register: lsout
+      tags: lsout
+
+    - name: Display the file
+      shell: cat /tmp/list.txt
+      register: displaylist
+
+    - debug: msg="{{displaylist.stdout_lines}}"
