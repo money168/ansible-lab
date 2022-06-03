@@ -1,7 +1,7 @@
 ---
 - name: user module demo
   hosts: ap01
-  become: true
+  #become: true
   vars:
     myuser: "demo"
     mypassword: "password"
