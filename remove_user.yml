@@ -1,0 +1,13 @@
+---
+- name: user module demo
+  hosts: localhost
+  become: true
+  vars:
+    myuser: "demo"
+    mypassword: "password"
+  tasks:
+    - name: Remove the user
+      ansible.builtin.user:
+        name: demo
+        state: absent
+        remove: yes
