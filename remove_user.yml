@@ -1,6 +1,6 @@
 ---
 - name: user module demo
-  hosts: localhost
+  hosts: ap01
   become: true
   vars:
     myuser: "demo"
