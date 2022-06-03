@@ -8,6 +8,6 @@
   tasks:
     - name: Remove the user
       ansible.builtin.user:
-        name: demo
+        name: example
         state: absent
         remove: yes
