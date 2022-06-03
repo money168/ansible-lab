@@ -57,7 +57,7 @@ ansible_password=abcd1234
 ansible_ssh_user=root
 #ansible_sudo_pass=abcd1234
 #ansible_become
-ansible_become_user=root
-ansible_become_method=su
-ansible_become_pass=abcd1234
+#ansible_become_user=root
+#ansible_become_method=su
+#ansible_become_pass=abcd1234
 #host_key_checking=False
