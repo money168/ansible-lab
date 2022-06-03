@@ -53,8 +53,8 @@ T12
 
 [AP:vars]
 
-#ansible_password=
-ansible_ssh_user=user
+ansible_password=abcd1234
+ansible_ssh_user=root
 #ansible_sudo_pass=abcd1234
 #ansible_become
 ansible_become_user=root
