@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: '{{host}}'
   vars: 
     - name: "John"
   tasks:
