@@ -1,9 +1,10 @@
 # ansiblelab
 
 
-playbook設定主機群組或使用者.
 
-extra-vars:
+
+extra-vars:  
+playbook設定主機群組或使用者.
 ---
 - hosts: '{{ hosts }}'  
   remote_user: '{{ user }}'  
